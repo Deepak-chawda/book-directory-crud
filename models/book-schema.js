@@ -4,7 +4,7 @@ const bookSchema = new mongoose.Schema({
   bookname: {
     type: String,
     required: true,
-    // unique: [true, console.log("book is already present")]
+    unique: true,
   },
   price: {
     type: Number,

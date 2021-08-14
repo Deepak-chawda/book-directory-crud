@@ -17,7 +17,7 @@ const fetch_book_logic = (req, res) => {
         }
       })
       .catch((error) => {
-        res.send("incorrect id");
+        res.send(" Oops incorrect id");
       });
   } else {
     res.send("plz add Id in End point.......");
@@ -39,7 +39,7 @@ const fetch_book_logic_param = (req, res) => {
         }
       }) 
       .catch((error) => {
-        res.send("incorrect id");
+        res.send("..........incorrect id");
       });
   } else {
     res.send("plz add Id in url (end points)......");
@@ -129,17 +129,7 @@ const update_book_logic = (req, res) => {
     if (Object.keys(getbody).length > 0) {
       authbook
         .findByIdAndUpdate(
-          { _id: fetchId },
-          {
-            $set: {
-              bookname: getbody.bookname,
-              price: getbody.price,
-              author: getbody.author,
-              language: getbody.language,
-              aboutAuthor: getbody.aboutAuthor,
-            },
-          },
-          { new: true }
+          { _id: fetchId }, {$set:getbody}, { new: true }
         )
         .then((data) => {
           res.status(200).send("update book successfully");

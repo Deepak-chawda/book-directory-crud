@@ -5,6 +5,7 @@ const bookSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
+    maxLength: 20 
   },
   price: {
     type: Number,
@@ -13,14 +14,17 @@ const bookSchema = new mongoose.Schema({
   author: {
     type: String,
     required: true,
+    maxLength: 15
   },
   language: {
     type: String,
     required: true,
+    maxLength: 10
   },
   aboutAuthor: {
     type: String,
     required: true,
+    maxLength: 40
   },
 });
 const authbook = new mongoose.model("book-collection", bookSchema);

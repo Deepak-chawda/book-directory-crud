@@ -62,7 +62,7 @@ const fetch_allbook_logic = (req ,res) => {
 // store books data in data base by using post request
 const add_book_logic = (req, res) => {
   // old way to do it
-  const data = req.body;
+  // const data = req.body;
   //   const bookdata = new authbook({
   //     bookname: data.bookname,
   //     price: data.price,

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+// here require logic file to use it
 const book_all_logic = require("../../controller/book-logic-file/book-logic");
 // get book by using _Id and Query (/get/books ? _id=....................)
 router.get("/get/books", book_all_logic.fetch_book_logic);
